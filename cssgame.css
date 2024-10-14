@@ -1,0 +1,483 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cielo {
+    background: url('images/background/sky.png') repeat-x;
+    background-size: cover;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    }
+
+@keyframes cielo {
+    0% {
+        background-position: 1280px
+    }
+
+    100% {
+        background-position: 0
+    }
+}
+
+#nubes2 {
+    height: 100%;
+    background: url('images/background/clouds_2.png') repeat-x;
+    background-size: 1280px 100%;
+    position: fixed;
+    animation: nubes2 250s linear infinite;
+    width: 100%;
+    top: 0;
+}
+
+@keyframes nubes2 {
+    0% {
+        background-position: 1280px
+    }
+
+    100% {
+        background-position: 0
+    }
+}
+
+#rocas {
+    height: 100%;
+    background: url('images/background/rocks.png') repeat-x;
+    background-size: 1280px 100%;
+    position: fixed;
+    animation: rocas 200s linear infinite;
+    width: 100%;
+    top: 0;
+}
+
+@keyframes rocas {
+    0% {
+        background-position: 1280px
+    }
+
+    100% {
+        background-position: 0
+    }
+}
+
+#fondo1 {
+    height: 100%;
+    background: url('images/background/ground_1.png') repeat-x;
+    background-size: 1280px 100%;
+    position: fixed;
+    animation: fondo1 150s linear infinite;
+    width: 100%;
+    top: 0;
+}
+
+@keyframes fondo1 {
+    0% {
+        background-position: 1280px
+    }
+
+    100% {
+        background-position: 0
+    }
+}
+
+#fondo2 {
+    height: 100%;
+    background: url('images/background/ground_2.png') repeat-x;
+    background-size: 1280px 100%;
+    position: fixed;
+    animation: fondo2 130s linear infinite;
+    width: 100%;
+    top: 0;
+}
+
+@keyframes fondo2 {
+    0% {
+        background-position: 1280px
+    }
+
+    100% {
+        background-position: 0
+    }
+}
+
+#fondo3 {
+    height: 100%;
+    background: url('images/background/ground_3.png') repeat-x;
+    background-size: 1280px 100%;
+    position: fixed;
+    animation: fondo3 50s linear infinite;
+    width: 100%;
+    top: 0;
+}
+
+@keyframes fondo3 {
+    0% {
+        background-position: 1280px
+    }
+
+    100% {
+        background-position: 0
+    }
+}
+
+#planta {
+    height: 100%;
+    background: url('images/background/plant.png') repeat-x;
+    background-size: 1280px 100%;
+    position: fixed;
+    animation: planta 10s linear infinite;
+    width: 100%;
+    top: 0;
+}
+
+@keyframes planta {
+    0% {
+        background-position: 1280px
+    }
+
+    100% {
+        background-position: 0
+    }
+}
+#soldado {
+    width: 128px;
+    height: 128px;
+    z-index: 1;
+    position: absolute;
+    bottom: 18%;
+    left: 100px;
+    transform: scale(2);
+}
+
+.correr {
+    background: url("images/Soldier_3/Walk.png") repeat-x;
+    animation: correr .6s steps(8) infinite;
+    }
+
+@keyframes correr {
+    0% {
+        background-position: 0
+    }
+    100% {
+        background-position: -1024px
+    }
+}
+
+.retroceder {
+    background: url("images/Soldier_3/Walk.png") repeat-x;
+    animation: retroceder .6s steps(8) infinite;
+    transform: scale(2) scaleX(-1);
+    z-index: 100000000;
+}
+
+@keyframes retroceder {
+    0% {
+        background-position: 0
+    }
+    100% {
+        background-position: -1024px
+    }
+}
+
+.saltar {
+    background: url("images/Soldier_3/Walk.png") repeat-x;
+    animation: saltar 1500ms; 
+}
+
+@keyframes saltar {
+    0% { transform: translateY(0) scale(2); }
+    50% { transform: translateY(-250px) scale(2); }
+    100% { transform: translateY(0) scale(2); }
+}
+
+.atacar{
+    background: url("images/Soldier_3/Attacck.png") repeat-x;
+    transform: scale(2);
+    animation: atacar .6s steps(5) 1;
+}
+
+@keyframes atacar {
+    0% {
+        background-position: 0
+    }
+
+    100% {
+        background-position: -640px
+    }
+}
+
+.morir {
+    background: url('images/Soldier_3/Dead.png') no-repeat;
+    animation: morir-soldado 1s steps(5) 1;
+}
+
+@keyframes morir-soldado {
+    0% { background-position: 0; }
+    100% { background-position: -640px; }
+}
+
+.enemigo {
+    width: 96px;
+    height: 96px;
+    position: absolute;
+    transform: scale(2) scaleX(-1);
+    z-index: 1;
+    overflow: visible; 
+}
+
+
+.enemigo.correr {
+    background: url("images/enemigo/Run.png") repeat-x;
+    animation: correr-enemigo 0.6s steps(8) infinite;
+}
+
+@keyframes correr-enemigo {
+    0% { background-position: 0; }
+    100% { background-position: -768px; }
+}
+
+.enemigo.morir {
+    background: url("images/enemigo/Dead.png") repeat-x;
+    animation: morir-enemigo 1s steps(5) 1;
+}
+
+@keyframes morir-enemigo {
+    0% { background-position: 0; }
+    100% { background-position: -480px; }
+}
+
+.obstaculo {
+    width: 72px;
+    height: 33px;
+    position: absolute;
+    transform: scale(2) scaleX(-1);
+    background:  url("images/boladefuego.png") repeat;
+   
+}
+
+
+.bala {
+    width: 10px;
+    height: 5px;
+    background-color: yellow;
+    position: absolute;
+    z-index: 2;
+    border-radius: 50%;
+
+}
+
+#estadisticas {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #0b1d3a;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+#contadorEnemigos, #vidasSoldado {
+    font-size: 16px;
+}
+
+#pantallaInicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-color: #0b1d3a; /* Color de fondo similar al de la imagen */
+    color: #ffffff; /* Color de texto blanco */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    z-index: 550;
+    border-radius: 5px;
+    position: relative;
+}
+
+#pantallaInicio h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#pantallaInicio label, #pantallaInicio p, #pantallaInicio ul {
+    margin-bottom: 15px;
+}
+
+#pantallaInicio input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#pantallaInicio button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Color verde para el botón */
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#pantallaInicio button:hover {
+    background-color: #45a049; /* Color verde oscuro al pasar el ratón */
+}
+
+
+.display {
+    display: none;
+}
+
+#nombreJugadorDisplay{
+    top: 10px;
+    background-color: #0b1d3a;
+    color: white;
+    position: fixed;
+    z-index: 500;
+    left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    gap: 10px;
+    font-family: 'Arial', sans-serif;
+    
+
+}
+
+.rayo {
+    position: absolute;
+    width: 115px;
+    height: 650px;
+    background:  url("images/rayo.png") no-repeat;
+    animation: rayo .6s steps(5) 1;
+    z-index: 500000;
+    transform: scale(.5);
+}
+
+@keyframes rayo {
+    0% { background-position: 0; }
+    100% { background-position: -650px; }
+}
+
+
+#pantallaInicio .sonido-boton {
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px; 
+    right: 20px;
+    cursor: pointer;
+    animation: vibrate 0.2s infinite; 
+    z-index: 1000; 
+    position: absolute;
+}
+
+#pantallaInicio .sonido-boton:hover {
+    background-color: #45a049;
+}
+
+#pantallaInicio .sonido-boton span {
+    font-size: 25px;
+    color: white;
+}
+
+
+@keyframes vibrate {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    25% {
+        transform: translate(2px, -2px);
+    }
+    50% {
+        transform: translate(-2px, 2px);
+    }
+    75% {
+        transform: translate(2px, 2px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+#pantallaFin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 500px;
+    background-color: #0b1d3a; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    z-index: 1000000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+#contenedorBotones {
+    display: flex;
+    gap: 20px; /* Espacio entre los botones */
+    justify-content: center;
+    margin-top: 20px; /* Espacio entre los botones y el contenido anterior */
+}
+#pantallaFin h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#pantallaFin p {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+#pantallaFin button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Color verde para el botón */
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#pantallaFin button:hover {
+    background-color: #45a049; /* Color verde oscuro al pasar el ratón */
+}
+
+#relojJuego {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0b1d3a; /* Color de fondo */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    z-index: 1000;
+    color: #ffffff; /* Color del texto */
+    font-family: 'Arial', sans-serif;
+    
+}

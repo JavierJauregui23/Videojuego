@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='cssgame.css'>
+    <title>Nigth war</title>
+</head>
+<body>
+    <div id="estadisticas">
+        <span id="contadorEnemigos">Enemigos muertos: 0</span>
+        <span id="vidasSoldado">Vidas del soldado: 3</span>
+    </div>
+    <div id="cielo"></div>
+    <div id="nubes2"></div>
+    <div id="rocas"></div>
+    <div id="fondo1"></div>
+    <div id="fondo2"></div>
+    <div id="fondo3"></div>
+    <div id="planta"></div>
+    <div id="pantallaInicio">
+        <h1>¡Bienvenido al Juego!</h1>
+        <label for="nombreJugador">Ingresa tu nombre:</label>
+        <input type="text" id="nombreJugadorInput" placeholder="Nombre del jugador">
+        <p>Comandos:</p>
+        <ul>
+            <li>Saltar: Barra espaciadora</li>
+            <li>Atacar: Letra A</li>
+            <li>Disparar: Letra D</li>
+        </ul>
+        <p>Consejo: ¡Salta las bolas de fuego y elimina los zombies disparándoles!</p>
+        <button id="btnJugar">Jugar</button>
+        <audio id="sonidoInicio" src="sonidos/musicainicio.wav" loop></audio>
+    
+        <div class="sonido-boton">
+            <span>🔊</span>
+        </div>
+    </div>
+    <div id="relojJuego"></div>
+
+    <audio id="musicaFondo" src="sonidos/musicafondo.mp3" loop></audio>
+    <audio id="sonidoRayo" src="sonidos\rayo.wav"></audio>
+    <audio id="sonidoZombie" src="sonidos\zombie.wav"></audio>
+    <audio id="sonidoDisparar" src="sonidos\disparo.wav"></audio>
+    <audio id="sonidoMuerte" src="sonidos\muerte.wav"></audio>
+    
+    <script src="soldado.js"></script>
+    <script src="enemigo.js"></script>
+    <script src="obstaculo.js"></script>
+    <script src="rayo.js"></script>
+    <script src="bala.js"></script>
+    <script src="logica.js"></script>
+    <script src="main.js"></script>
+  
+  
+</body>
+</html>
