@@ -187,10 +187,10 @@ body, html {
 
 .saltar {
     background: url("images/Soldier_3/Walk.png") repeat-x;
-    animation: saltar 1500ms; 
+    animation: saltarsoldado 1500ms; 
 }
 
-@keyframes saltar {
+@keyframes saltarsoldado {
     0% { transform: translateY(0) scale(2); }
     50% { transform: translateY(-250px) scale(2); }
     100% { transform: translateY(0) scale(2); }
@@ -199,10 +199,10 @@ body, html {
 .atacar{
     background: url("images/Soldier_3/Attacck.png") repeat-x;
     transform: scale(2);
-    animation: atacar .6s steps(5) 1;
+    animation: atacarsoldado .6s steps(5) 1;
 }
 
-@keyframes atacar {
+@keyframes atacarsoldado {
     0% {
         background-position: 0
     }
@@ -295,11 +295,12 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 500px;
+    height: 550px;
+    width: 500px;
     background-color: #0b1d3a; /* Color de fondo similar al de la imagen */
     color: #ffffff; /* Color de texto blanco */
     font-family: 'Arial', sans-serif;
-    text-align: center;
+    text-align: left;
     z-index: 550;
     border-radius: 5px;
     position: relative;
@@ -361,7 +362,7 @@ body, html {
     width: 115px;
     height: 650px;
     background:  url("images/rayo.png") no-repeat;
-    animation: rayo .6s steps(5) 1;
+    animation: rayo .8s steps(5) 1;
     z-index: 500000;
     transform: scale(.5);
 }
@@ -373,16 +374,16 @@ body, html {
 
 
 #pantallaInicio .sonido-boton {
-    width: 40px; 
-    height: 40px;
+    width: 35px; 
+    height: 35px;
     border-radius: 50%;
     background-color: #4CAF50;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 20px; 
-    right: 20px;
+    top: 15px; 
+    right: 15px;
     cursor: pointer;
     animation: vibrate 0.2s infinite; 
     z-index: 1000; 

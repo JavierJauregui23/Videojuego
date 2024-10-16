@@ -58,7 +58,7 @@ class Soldado {
         this.clean();
         this.soldado.classList.add("morir");
         this.soldado.addEventListener("animationend", () => {
-            this.desaparecer(); // Elimina el enemigo del DOM al morir
+            this.desaparecer();
         }, { once: true });
     }
 

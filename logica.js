@@ -60,7 +60,6 @@ function gameLoop() {
         if (colision(soldado.status(), enemigo.status())) {
             if (soldado.vivo) {
                 manejarMuerteSoldado();
-                break;
             }
         }
     }
@@ -78,7 +77,6 @@ function gameLoop() {
                 obstaculo.remover();  // Hacer que el obstáculo desaparezca
                 obstaculosAEliminar.push(index);
             }
-            break;
         }
     
     
@@ -178,7 +176,7 @@ function manejarMuerteSoldado() {
             setTimeout(function() {
                 soldado = new Soldado();
                 soldado.correr();  // Comienza la animación de correr del nuevo soldado
-            }, 1000);
+            }, 2000);
         }, { once: true });
     }
 }
@@ -232,8 +230,8 @@ function iniciarJuego() {
     mostrarNombreJugador();
 
     // Iniciar el bucle del juego
-    intervaloObstaculos= setInterval(crearObstaculo, 7000);
-    intervaloEnemigos= setInterval(crearEnemigo, 5000);
+    intervaloObstaculos= setInterval(crearObstaculo, Math.random() * (7000 - 1000) + 1000);
+    intervaloEnemigos= setInterval(crearEnemigo, Math.random() * (5000 - 1000) + 1000);
     intervaloRayos= setInterval(crearRayo, Math.random() * (5000 - 1000) + 1000);
     gameLoopActivo = true;
     requestAnimationFrame(gameLoop);
